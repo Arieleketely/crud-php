@@ -1,0 +1,7 @@
+.tamanho{
+    width: 10cm;
+    margin:2cm;
+}
+body{
+    background-image: linear-gradient( to right,white,blue, white);
+}
