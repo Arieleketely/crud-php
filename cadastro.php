@@ -13,7 +13,7 @@
 
 session_start();
 include_once("./conexao.php");
-
+$id =  $_POST["id"];
 $nome =  $_POST["nome"];
 $email =$_POST["email"];
 $telefone =$_POST["telefone"];
@@ -34,10 +34,12 @@ $result_usuarios = "SELECT * FROM idusuarios";
 			echo "<td>" . $row_usuario['email']."</td>";
 			echo "<td>" . $row_usuario['telefone']."</td>";
 			echo "<td>" . $row_usuario['mensagem']."</td>";
-			 echo "<td>". "<a href=\"para_onde_vai_apontar_o_link\">Cadastrar<a/>"."</td>";
-			 echo "<td>". "<a href=\"para_onde_vai_apontar_o_link\">Alterar<a/>"."</td>";
-			 echo "<td>". "<a href=\"para_onde_vai_apontar_o_link\">Excluir<a/>"."</td></tr>"; 
-
+		
+			
+ 
+			 echo  "    <form method='POST' action='./index.html'> <td>"."<input class='btn btn-primary' type='submit' value='Cadastrar'></td></form>";
+			 echo  "    <form method='POST' action='./alterar.php'> <td>"."<input class='btn btn-primary' type='submit' value='Alterar'></td></form>";
+			 echo "   <form method='POST'><td class='btn btn-danger'><a   href='deletar.php?id=" . $row_usuario['id'] . "'>Apagar</a></td><tr>";
 		}
 		echo "<br>";
 ?>
